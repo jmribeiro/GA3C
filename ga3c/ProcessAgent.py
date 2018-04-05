@@ -93,12 +93,12 @@ class ProcessAgent(Process):
         while not done:
             # very first few frames
             if self.env.current_state is None:
-                self.env.step(0)  # 0 == NOOP
+                self.env.step(0, self.id)  # 0 == NOOP
                 continue
 
             prediction, value = self.predict(self.env.current_state)
             action = self.select_action(prediction)
-            reward, done = self.env.step(action)
+            reward, done = self.env.step(action, self.id)
             reward_sum += reward
             exp = Experience(self.env.previous_state, action, prediction, reward, done)
             experiences.append(exp)

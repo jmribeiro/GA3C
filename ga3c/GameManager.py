@@ -39,11 +39,15 @@ class GameManager:
         observation = self.env.reset()
         return observation
 
-    def step(self, action):
-        self._update_display()
+    def step(self, action, worker_id):
+        self._update_display(worker_id)
         observation, reward, done, info = self.env.step(action)
         return observation, reward, done, info
 
-    def _update_display(self):
-        if self.display:
+    def _update_display(self, worker_id):
+        if self.display == 0:
+            return
+        elif self.display == 2:
+            self.env.render()
+        elif self.display == 1 and worker_id == 0:
             self.env.render()

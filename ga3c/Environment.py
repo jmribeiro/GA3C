@@ -39,7 +39,7 @@ from GameManager import GameManager
 
 class Environment:
     def __init__(self):
-        self.game = GameManager(Config.ATARI_GAME, display=Config.PLAY_MODE)
+        self.game = GameManager(Config.ATARI_GAME, display=Config.RENDER_MODE)
         self.nb_frames = Config.STACKED_FRAMES
         self.frame_q = Queue(maxsize=self.nb_frames)
         self.previous_state = None
@@ -81,8 +81,8 @@ class Environment:
         self._update_frame_q(self.game.reset())
         self.previous_state = self.current_state = None
 
-    def step(self, action):
-        observation, reward, done, _ = self.game.step(action)
+    def step(self, action, worker_id):
+        observation, reward, done, _ = self.game.step(action, worker_id)
 
         self.total_reward += reward
         self._update_frame_q(observation)

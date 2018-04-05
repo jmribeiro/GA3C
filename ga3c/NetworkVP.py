@@ -63,7 +63,6 @@ class NetworkVP:
                 if Config.LOAD_CHECKPOINT or Config.SAVE_MODELS:
                     vars = tf.global_variables()
                     self.saver = tf.train.Saver({var.name: var for var in vars}, max_to_keep=0)
-                
 
     def _create_graph(self):
         self.x = tf.placeholder(
@@ -156,7 +155,6 @@ class NetworkVP:
                 self.train_op = [self.train_op_p, self.train_op_v]
             else:
                 self.train_op = self.opt.minimize(self.cost_all, global_step=self.global_step)
-
 
     def _create_tensor_board(self):
         summaries = tf.get_collection(tf.GraphKeys.SUMMARIES)

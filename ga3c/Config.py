@@ -32,6 +32,10 @@ class Config:
     # Name of the game, with version (e.g. PongDeterministic-v0)
     ATARI_GAME = 'PongDeterministic-v0'
 
+    # Render the screen
+    # (0 = Off, 1 = Render first worker, 2 = Render all workers)
+    RENDER_MODE = 0
+
     # Enable to see the trained agent in action
     PLAY_MODE = False
     # Enable to train
@@ -46,11 +50,11 @@ class Config:
     
     # If the dynamic configuration is on, these are the initial values.
     # Number of Agents
-    AGENTS = 32 
+    AGENTS = 32                  # 32
     # Number of Predictors
-    PREDICTORS = 2
+    PREDICTORS = 2              # 2
     # Number of Trainers
-    TRAINERS = 2
+    TRAINERS = 2                # 2
 
     # Device
     DEVICE = 'gpu:0'
