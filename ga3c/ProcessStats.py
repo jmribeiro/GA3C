@@ -25,11 +25,8 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import sys
-if sys.version_info >= (3,0):
-    from queue import Queue as queueQueue
-else:
-    from Queue import Queue as queueQueue
 
+from queue import Queue as queueQueue
 from datetime import datetime
 from multiprocessing import Process, Queue, Value
 

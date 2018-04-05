@@ -34,14 +34,14 @@ class Config:
 
     # Render the screen
     # (0 = Off, 1 = Render first worker, 2 = Render all workers)
-    RENDER_MODE = 0
+    RENDER_MODE = 1
 
     # Enable to see the trained agent in action
     PLAY_MODE = False
     # Enable to train
     TRAIN_MODELS = True
     # Load old models. Throws if the model doesn't exist
-    LOAD_CHECKPOINT = False
+    LOAD_CHECKPOINT = True
     # If 0, the latest checkpoint is loaded
     LOAD_EPISODE = 0 
 
@@ -50,11 +50,11 @@ class Config:
     
     # If the dynamic configuration is on, these are the initial values.
     # Number of Agents
-    AGENTS = 32                  # 32
+    AGENTS = 1                  # 32
     # Number of Predictors
-    PREDICTORS = 2              # 2
+    PREDICTORS = 1              # 2
     # Number of Trainers
-    TRAINERS = 2                # 2
+    TRAINERS = 1                # 2
 
     # Device
     DEVICE = 'gpu:0'
@@ -90,7 +90,7 @@ class Config:
     EPISODES = 400000
     ANNEALING_EPISODE_COUNT = 400000
 
-    # Entropy regualrization hyper-parameter
+    # Entropy regularization hyper-parameter
     BETA_START = 0.01
     BETA_END = 0.01
 

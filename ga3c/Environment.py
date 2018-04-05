@@ -24,11 +24,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import sys
-if sys.version_info >= (3,0):
-    from queue import Queue
-else:
-    from Queue import Queue
+from queue import Queue
 
 import numpy as np
 import scipy.misc as misc
